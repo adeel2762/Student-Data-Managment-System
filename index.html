@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="app-header text-center mb-4 p-4 rounded-3 shadow-sm">
+            <h1 class="app-title mb-1">Student Information Management System</h1>
+            <p class="mb-0 app-subtitle">Add, edit, and manage student records</p>
+        </header>
+        <div class="card shadow-sm mb-5 form-card">
+            <div class="card-body">
+                <h2 class="card-title h5 mb-4 d-flex align-items-center justify-content-between">
+                    <span id="formTitle">Add New Student</span>
+                    <span class="badge rounded-pill text-bg-primary" id="totalBadge">0 students</span>
+                </h2>
+                <form id="studentForm" novalidate>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Enter student name" required>
+                                <label for="studentName">Student Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="fatherName" name="fatherName" placeholder="Enter father name" required>
+                                <label for="fatherName">Father Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="rollNumber" name="rollNumber" placeholder="Enter roll number" required>
+                                <label for="rollNumber">Roll Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" min="1" max="100" required>
+                                <label for="age">Age</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label d-block fw-semibold">Gender</label>
+                            <div class="btn-group w-100" role="group" aria-label="Gender selection">
+                                <input type="radio" class="btn-check" name="gender" id="genderMale" value="Male" required>
+                                <label class="btn btn-outline-primary" for="genderMale">Male</label>
+                                <input type="radio" class="btn-check" name="gender" id="genderFemale" value="Female">
+                                <label class="btn btn-outline-primary" for="genderFemale">Female</label>
+                                <input type="radio" class="btn-check" name="gender" id="genderOther" value="Other">
+                                <label class="btn btn-outline-primary" for="genderOther">Other</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="course" name="course" required>
+                                    <option value="" selected disabled>Select a course</option>
+                                    <option value="BSc Computer Science">BSc Computer Science</option>
+                                    <option value="BBA">BBA</option>
+                                    <option value="BCom">BCom</option>
+                                    <option value="BA English">BA English</option>
+                                    <option value="Software Engineering">Software Engineering</option>
+                                </select>
+                                <label for="course">Course</label>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="editIndex" value="">
+                    <div class="mt-4 d-flex gap-2">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Add Student</button>
+                        <button type="button" class="btn btn-outline-secondary" id="resetBtn">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title h5 mb-4">Student Records</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Student Name</th>
+                                <th>Father Name</th>
+                                <th>Roll Number</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Gender</th>
+                                <th>Course</th>
+                                <th>Age</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody"></tbody>
+                    </table>
+                </div>
+                <div id="noRecordsMsg" class="text-center text-muted py-4">No student records added yet.</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

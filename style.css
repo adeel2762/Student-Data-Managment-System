@@ -1,0 +1,70 @@
+body {
+    background-color: #f4f6f9;
+}
+
+.app-header {
+    background: linear-gradient(135deg, #0dfd79 0%, #6610f2 100%);
+    color: #fff;
+}
+
+.app-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.app-subtitle {
+    color: #f6ededd9;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.form-card {
+    border-top: 4px solid #0dfd51;
+}
+
+.card-title {
+    font-weight: 600;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 0.75rem;
+}
+
+.form-floating > label {
+    color: #6c757d;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6610f2;
+    box-shadow: 0 0 0 0.2rem rgba(102, 16, 242, 0.15);
+}
+
+.btn-check:checked + .btn-outline-primary {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.table-row-editing {
+    background-color: #fff3cd !important;
+}
+
+.action-btn {
+    margin-right: 5px;
+}
+
+.table thead th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+#noRecordsMsg.d-none {
+    display: none;
+}
+
+#totalBadge {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
